@@ -1,0 +1,18 @@
+version: '3.4'
+
+
+services:
+  postgres:
+    container_name: ptracker-db
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USEER: postgres
+      POSTGRES_DB: ptracker
+      POSTGRES_PASSWORD: ptracker
+
+volumes:
+  postgres_data:
